@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Usuń Studenta</title>
+</head>
+<body>
+    <h1>Usuń Studenta: {{ student.imie }} {{ student.nazwisko }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>Czy na pewno chcesz usunąć tego studenta?</p>
+        <button type="submit">Usuń</button>
+    </form>
+    <a href="{% url 'lista_studentow' %}">Powrót do listy</a>
+</body>
+</html>

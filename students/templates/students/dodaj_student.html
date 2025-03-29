@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Dodaj Studenta</title>
+</head>
+<body>
+    <h1>Dodaj Studenta</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Dodaj</button>
+    </form>
+    <a href="{% url 'lista_studentow' %}">Powrót do listy</a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Lista Studentów</title>
+</head>
+<body>
+    <h1>Wszyscy Studenci</h1>
+    <a href="{% url 'dodaj_student' %}">Dodaj studenta</a>
+    <ul>
+        {% for student in students %}
+            <li>
+                {{ student.imie }} {{ student.nazwisko }} ({{ student.indeks }})
+                <a href="{% url 'edytuj_student' student.id %}">Edytuj</a>
+                <a href="{% url 'usun_student' student.id %}">Usuń</a>
+                <a href="{% url 'dodaj_edytuj_profil' student.id %}">
+                    {% if student.profil %}Edytuj profil{% else %}Dodaj profil{% endif %}
+                </a>
+            </li>
+        {% empty %}
+            <li>Brak studentów.</li>
+        {% endfor %}
+    </ul>
+    <p>
+        <a href="{% url 'lista_studentow_z_profilami' %}">Studenci z profilami</a> |
+        <a href="{% url 'lista_studentow_bez_profilu' %}">Studenci bez profilu</a>
+    </p>
+</body>
+</html>

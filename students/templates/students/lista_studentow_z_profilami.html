@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Studenci z Profilami</title>
+</head>
+<body>
+    <h1>Studenci z Profilami</h1>
+    <a href="{% url 'lista_studentow' %}">Powrót do listy</a>
+    <ul>
+        {% for student in students %}
+            <li>
+                {{ student.imie }} {{ student.nazwisko }} ({{ student.indeks }}) -
+                Profil: {{ student.profil.adres }}, {{ student.profil.telefon }}, {{ student.profil.email }}
+            </li>
+        {% empty %}
+            <li>Brak studentów z profilami.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% if student.profil %}Edytuj Profil{% else %}Dodaj Profil{% endif %}</title>
+</head>
+<body>
+    <h1>{% if student.profil %}Edytuj Profil{% else %}Dodaj Profil{% endif %} dla {{ student.imie }} {{ student.nazwisko }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">{% if student.profil %}Zapisz zmiany{% else %}Dodaj profil{% endif %}</button>
+    </form>
+    <a href="{% url 'lista_studentow' %}">Powrót do listy</a>
+</body>
+</html>
