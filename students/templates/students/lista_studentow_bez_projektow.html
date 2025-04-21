@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Studenci bez Projektów</title>
+</head>
+<body>
+    <h1>Studenci bez Projektów</h1>
+
+    <p>
+      <a href="{% url 'lista_studentow' %}">« Powrót do listy wszystkich studentów</a>
+    </p>
+
+    <ul>
+      {% for student in students %}
+        <li>
+          {{ student.imie }} {{ student.nazwisko }} ({{ student.indeks }})
+        </li>
+      {% empty %}
+        <li><em>Wszyscy studenci mają co najmniej jeden projekt.</em></li>
+      {% endfor %}
+    </ul>
+</body>
+</html>

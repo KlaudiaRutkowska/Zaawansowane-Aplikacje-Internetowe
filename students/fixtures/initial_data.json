@@ -1,0 +1,20 @@
+[
+  {
+    "model": "students.student",
+    "pk": 1,
+    "fields": {
+      "imie": "Jan",
+      "nazwisko": "Kowalski",
+      "indeks": "2025001"
+    }
+  },
+  {
+    "model": "students.student",
+    "pk": 2,
+    "fields": {
+      "imie": "Anna",
+      "nazwisko": "Nowak",
+      "indeks": "2025002"
+    }
+  }
+]

@@ -11,11 +11,11 @@
         {% for student in students %}
             <li>
                 {{ student.imie }} {{ student.nazwisko }} ({{ student.indeks }})
-                <a href="{% url 'edytuj_student' student.id %}">Edytuj</a>
-                <a href="{% url 'usun_student' student.id %}">Usuń</a>
-                <a href="{% url 'dodaj_edytuj_profil' student.id %}">
+                [<a href="{% url 'edytuj_student' student.id %}">Edytuj</a>]
+                [<a href="{% url 'usun_student' student.id %}">Usuń</a>]
+                [<a href="{% url 'dodaj_edytuj_profil' student.id %}">
                     {% if student.profil %}Edytuj profil{% else %}Dodaj profil{% endif %}
-                </a>
+                </a>]
             </li>
         {% empty %}
             <li>Brak studentów.</li>
@@ -23,7 +23,9 @@
     </ul>
     <p>
         <a href="{% url 'lista_studentow_z_profilami' %}">Studenci z profilami</a> |
-        <a href="{% url 'lista_studentow_bez_profilu' %}">Studenci bez profilu</a>
+        <a href="{% url 'lista_studentow_bez_profilu' %}">Studenci bez profilu</a> |
+        <a href="{% url 'lista_studentow_z_projektami' %}">z projektami</a> |
+        <a href="{% url 'lista_studentow_bez_projektow' %}">bez projektów</a>
     </p>
 </body>
 </html>
